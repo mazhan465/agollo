@@ -1,3 +1,3 @@
-module github.com/philchia/agollo
+module github.com/mazhan465/agollo
 
 go 1.12
