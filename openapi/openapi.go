@@ -25,10 +25,10 @@ type OpenAPI interface {
 }
 
 // New create an OpenAPI instance
-func New(portal_address string, appid string, env string, cluster string, token string) OpenAPI {
+func New(portal_address string, appid string, env string, cluster string, token string, timeout int64) OpenAPI {
 	ret := &api{
 		client: &http.Client{
-			Timeout: time.Second * 10,
+			Timeout: time.Second * time.Duration(timeout),
 		},
 		portalAddr: portal_address,
 		appid:      appid,
